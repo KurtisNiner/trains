@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 
 
@@ -21,36 +22,38 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                    Train Info
+                        Train Info
+                    </div>
+
+                    <div class="panel panel-body">
+                        <table class="table" id="trainInput">
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Destination</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
-           
-                <div class="panel panel-body">
-                    <table class="table" id="trainInput">
-                        <thead>
-                            <tr>
-                                <th>Employee Name</th>
-                                <th>Role</th>
-                                <th>Start Date</th>
-                                <th>Months Worked</th>
-                                <th>Monthly Rate</th>
-                                <th>Total Billed</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Add a train dude
-                </div>
-                <div class="panel-body">
-                    <!-- adding form next
-                    then I will add javascript to link the form to the firebase and 
-                vise versa so that it will show up in the train schedule itself -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Add a train dude
+                    </div>
+                    <div class="panel-body">
+                        <form id="form">
+                            <div class="trainInfo">
+                                <label for=""
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 </body>
