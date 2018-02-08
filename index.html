@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="script.js"></script>
 
 
     <title>trains application</title>
@@ -47,13 +48,32 @@
                     <div class="panel-body">
                         <form id="form">
                             <div class="trainInfo">
-                                <label for=""
+                                <label for="trainName">Train Name</label>
+                                <input type="text" class="form-control" id="name">
                             </div>
-                        </form>
+
+                            <div class="trainInfo">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="goingTo">
+                            </div>
+
+                            <div class="trainInfo">
+                                <label for="firstTrain">First Train Arrives at:</label>
+                                <input type="text" class="form-control" id="first">
+                            </div>
+
+                            <div class="trainInfo">
+                                <label for="frequency">Frequency</label>
+                                <input type="text" class="form-control" id="frequency">
+                            </div>
+                            <br>
+                        <button type="submit" class="btn btn-success pull-right" id="submitTrain">Press When Done</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </body>
