@@ -10,11 +10,15 @@ var config = {
 //configures firebase
 firebase.initializeApp(config);
 
-//give a variable to the firebase to to refrence it
+//give a variable to the firebase in order to refrence it
 var database = firebase.database();
 
 //give an array of variables that allow train times to be saved 
 var trains = [];
+var trainNameInput = "";
+var destinationInput ="";
+var firstArrivalInput = 0;
+var frequencyInput = 0;
 
 //get user input when form is submitted to firebase
 
