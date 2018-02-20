@@ -14,6 +14,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 // console.log(database);
 //give an array of variables that allow train times to be saved 
+// var timeNow = moment().format("hh:mm a");
 var trains = [];
 var trainNameInput = "";
 var destinationInput = "";
@@ -28,12 +29,12 @@ $("#submit").on("click", function () {
     trainNameInput = $("#name").val().trim();
     destinationInput = $("#goingTo").val().trim();
     firstArrivalInput = $("#first").val().trim();
-    frequencyInput = moment($("#frequency").val().trim()).format("X");
+    frequencyInput = $("#frequency").val().trim();
 
-    console.log(trainNameInput);
-    console.log(destinationInput);
-    console.log(firstArrivalInput);
-    console.log(frequencyInput);
+    // console.log(trainNameInput);
+    // console.log(destinationInput);
+    // console.log(firstArrivalInput);
+    // console.log(frequencyInput);
 
     var trainSave = {
         trainName: trainNameInput,
@@ -50,7 +51,9 @@ console.log(childSnapshot.val()); //database info
 
 var tr = $("<tr>");
 tr.text(childSnapshot.val().destination);
-$("#trainSchedule").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" +  childSnapshot.val().destination + "</td><td>" + childSnapshot.val().firstTrainTime + "</td></tr>");
+$("#trainSchedule").append("<tr><td>" + childSnapshot.val().trainName + 
+"</td><td>" +  childSnapshot.val().destination + "</td><td>" + childSnapshot.val().firstArrive + "</td><td>"
++ childSnapshot.val().frequency + "</td></tr>");
 
 
 })
