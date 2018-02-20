@@ -27,10 +27,10 @@ var frequencyInput = 0;
 $("#submit").on("click", function () {
     event.preventDefault();
 
-    trainNameInput = $("#name").val().trim();
-    destinationInput = $("#goingTo").val().trim();
-    firstArrivalInput = $("#first").val().trim();
-    frequencyInput = $("#frequency").val().trim();
+    var trainNameInput = $("#name").val().trim();
+    var destinationInput = $("#goingTo").val().trim();
+    var firstArrivalInput = $("#first").val().trim();
+    var frequencyInput = $("#frequency").val().trim();
 
     // console.log(trainNameInput);
     // console.log(destinationInput);
@@ -40,15 +40,22 @@ $("#submit").on("click", function () {
     //calculate time differences 
     var firstArrival = moment(trainNameInput, "hh:mm a").subtract(1, "years");
     var difference = moment().diff(moment(firstArrivalInput, "minutes"));
-    var timeRemaining = minutesUntilArrial % frequencyInput;
+    var timeRemaining = difference % frequencyInput;
     var timeUntilNextArrival = frequencyInput - timeRemaining;
-    var timeUntilNextTrain = moment().add(nextArrival, "minutes").format("hh:mm a");
+    var nextTrain = moment().add(timeUntilNextArrival, "minutes").format("hh:mm a");
+
+    console.log(firstArrival);
+    console.log(difference);
+    console.log(timeUntilNextArrival);
+    console.log(timeUntilNextTrain);
 
     var trainSave = {
         trainName: trainNameInput,
         destination: destinationInput,
         firstArrive: firstArrivalInput,
         frequency: frequencyInput,
+        timeUntilNextArrival,
+
         // nextTrainArrival: timeUntilNextArrival,
         // waitTime: timeUntilNextTrain
     }
@@ -64,8 +71,8 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     tr.text(childSnapshot.val().destination);
     $("#trainSchedule").append("<tr><td>" + childSnapshot.val().trainName +
         "</td><td>" + childSnapshot.val().destination + "</td><td>" + childSnapshot.val().firstArrive + "</td><td>"
-        + childSnapshot.val().frequency + "</td></tr>" );
-        // + nextTrainArrival + "</td><td>"
-        // + waitTime + "</td></tr>");
+        + childSnapshot.val().frequency + "</td></tr>");
+    // + nextTrainArrival + "</td><td>"
+    // + waitTime + "</td></tr>");
 })
 
